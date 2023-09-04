@@ -1,5 +1,93 @@
 # TOC TRADE WEB
 
+## VS Code
+
+- `.vscode/extensions.json`
+  - contains a list of recommended extensions to be installed for this project.
+
+  ```json
+  {
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
+    "recommendations": [
+      "angular.ng-template"
+    ]
+  }
+  ```
+
+- `.vscode/launch.json`
+  - contains a list of configurations for debugging the application.
+
+  ```json
+  {
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "ng serve",
+        "type": "chrome",
+        "request": "launch",
+        "preLaunchTask": "npm: start",
+        "url": "http://localhost:4200/"
+      },
+      {
+        "name": "ng test",
+        "type": "chrome",
+        "request": "launch",
+        "preLaunchTask": "npm: test",
+        "url": "http://localhost:9876/debug.html"
+      }
+    ]
+  }
+  ```
+
+- `.vscode/tasks.json`
+  - contains a list of tasks to be run when the `Run Task` command is executed.
+
+  ```json
+  {
+    // For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "npm",
+        "script": "start",
+        "isBackground": true,
+        "problemMatcher": {
+          "owner": "typescript",
+          "pattern": "$tsc",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": {
+              "regexp": "(.*?)"
+            },
+            "endsPattern": {
+              "regexp": "bundle generation complete"
+            }
+          }
+        }
+      },
+      {
+        "type": "npm",
+        "script": "test",
+        "isBackground": true,
+        "problemMatcher": {
+          "owner": "typescript",
+          "pattern": "$tsc",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": {
+              "regexp": "(.*?)"
+            },
+            "endsPattern": {
+              "regexp": "bundle generation complete"
+            }
+          }
+        }
+      }
+    ]
+  }
+  ```
+
 ## CLI
 
 - `ng serve`
